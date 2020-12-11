@@ -10,11 +10,25 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_12_11_115901) do
+ActiveRecord::Schema.define(version: 2020_12_11_153148) do
 
-  create_table "dev_radars", charset: "utf8", options: "ENGINE=MyISAM ROW_FORMAT=DYNAMIC", force: :cascade do |t|
+  create_table "devs", charset: "utf8mb4", options: "ENGINE=MyISAM ROW_FORMAT=DYNAMIC", force: :cascade do |t|
+    t.string "nome"
+    t.string "user_name"
+    t.string "bio"
+    t.string "avatar_url"
+    t.string "techs"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "localizacao", charset: "utf8mb4", options: "ENGINE=MyISAM ROW_FORMAT=DYNAMIC", force: :cascade do |t|
+    t.string "longitude"
+    t.string "latitude"
+    t.bigint "dev_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["dev_id"], name: "index_localizacao_on_dev_id"
   end
 
 end
