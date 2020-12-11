@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_12_11_153148) do
+ActiveRecord::Schema.define(version: 2020_12_11_224850) do
 
   create_table "devs", charset: "utf8mb4", options: "ENGINE=MyISAM ROW_FORMAT=DYNAMIC", force: :cascade do |t|
     t.string "nome"

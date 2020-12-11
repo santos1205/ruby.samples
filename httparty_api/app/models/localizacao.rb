@@ -1,3 +1,5 @@
 class Localizacao < ApplicationRecord
-  belongs_to :dev
+  self.table_name = "localizacao"
+  belongs_to :dev  
+
 end

@@ -1,4 +1,4 @@
-class CreateLocalizacao < ActiveRecord::Migration[6.1]
+class CreateLocalizacaos < ActiveRecord::Migration[6.1]
   def change
     create_table :localizacao do |t|
       t.string :longitude
