@@ -6,7 +6,11 @@ class Api::V1::SearchController < ApplicationController
 
         @devs_results = Dev                        
             .joins(:localizacao)
-            .where('localizacao.longitude = ? and localizacao.latitude = ? and techs = ?', longitude, latitude, techs)
+            .where(
+                'localizacao.longitude = ? 
+                and localizacao.latitude = ?'
+                , longitude, latitude
+            )
 
         render json: @devs_results
         #render json: { longitude: longitude }

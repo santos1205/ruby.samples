@@ -1,7 +1,10 @@
 class Api::V1::DevsController < ApiController
     
     def index
-        render json: Dev.all        
+        listDevs = Dev.all
+        #render json: Dev.all
+        render json: listDevs, 
+        include: [:localizacao => {:only => [:longitude,:latitude]}]
     end
 
     def create
